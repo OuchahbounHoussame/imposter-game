@@ -11,13 +11,24 @@ export default function VotingDonePhase({
   goToImpostorGuess,
 }) {
   return (
-    <div style={{ background: COLORS.panel, border: `1px solid ${COLORS.hairline}`, borderRadius: 14, padding: 22, textAlign: "center" }}>
+    <div style={{
+      background: COLORS.panel,
+      border: `1px solid ${COLORS.hairline}`,
+      borderRadius: 14,
+      padding: "20px",
+      textAlign: "center",
+      display: "flex",
+      flexDirection: "column",
+      gap: "16px",
+      maxHeight: "80vh",
+      overflowY: "auto",
+    }}>
       {!votingRevealed ? (
         <>
-          <div style={{ color: COLORS.goldSoft, fontSize: 17, marginBottom: 8, fontWeight: 600 }}>
+          <div style={{ color: COLORS.goldSoft, fontSize: 17, fontWeight: 600 }}>
             التصويت خلص
           </div>
-          <div style={{ color: COLORS.muted, fontSize: 13, marginBottom: 20 }}>
+          <div style={{ color: COLORS.muted, fontSize: 13 }}>
             الكل صوّت. الآن نكشفو شكون كان الغريب حقيقة
           </div>
           <GoldButton
@@ -40,12 +51,12 @@ export default function VotingDonePhase({
               fontSize: 20,
               fontWeight: 700,
               transform: "rotate(-4deg)",
-              marginBottom: 18,
+              alignSelf: "center"
             }}
           >
             الغريب: {playerLabel(impostorIndex)}
           </div>
-          <div className="flex flex-col gap-2 mb-6" style={{ textAlign: "right" }}>
+          <div className="flex flex-col gap-2" style={{ textAlign: "right" }}>
             {votes.map((v, voter) => {
               const correct = v === impostorIndex;
               return (
@@ -55,7 +66,7 @@ export default function VotingDonePhase({
                   style={{
                     background: COLORS.panelSoft,
                     borderRadius: 8,
-                    padding: "8px 12px",
+                    padding: "12px",
                     fontSize: 13,
                     border: `1px solid ${correct ? COLORS.greenStamp : COLORS.redStamp}`,
                   }}

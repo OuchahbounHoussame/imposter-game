@@ -19,11 +19,16 @@ export default function SetupPhase({
         background: COLORS.panel,
         border: `1px solid ${COLORS.hairline}`,
         borderRadius: 14,
-        padding: 20,
+        padding: "20px",
+        display: "flex",
+        flexDirection: "column",
+        gap: "16px",
+        maxHeight: "80vh",
+        overflowY: "auto",
       }}
       className="shadow-lg"
     >
-      <div className="mb-5">
+      <div>
         <div style={{ color: COLORS.goldSoft, fontSize: 14, marginBottom: 8 }}>
           عدد اللاعبين: <span style={{ color: COLORS.cream }}>{playerCount}</span>
         </div>
@@ -41,7 +46,7 @@ export default function SetupPhase({
         </div>
       </div>
 
-      <div className="mb-5">
+      <div>
         <div style={{ color: COLORS.goldSoft, fontSize: 14, marginBottom: 8 }}>أسماء اللاعبين (اختياري)</div>
         <div className="flex flex-col gap-2">
           {names.map((n, i) => (
@@ -68,7 +73,7 @@ export default function SetupPhase({
         </div>
       </div>
 
-      <div className="mb-6">
+      <div>
         <div style={{ color: COLORS.goldSoft, fontSize: 14, marginBottom: 8 }}>الفئة</div>
         <select
           value={category}
@@ -95,7 +100,7 @@ export default function SetupPhase({
       <GoldButton onClick={startGame}>ابدأ اللعبة</GoldButton>
 
       {scores.some((s) => s > 0) && (
-        <div className="flex items-center justify-between" style={{ marginTop: 14, fontSize: 12, color: COLORS.muted }}>
+        <div className="flex items-center justify-between" style={{ fontSize: 12, color: COLORS.muted }}>
           <span>عندكم نقط محفوظة من جولة سابقة</span>
           <button
             onClick={resetScores}
@@ -106,7 +111,7 @@ export default function SetupPhase({
         </div>
       )}
 
-      <div style={{ color: COLORS.muted, fontSize: 12, marginTop: 14, lineHeight: 1.7 }}>
+      <div style={{ color: COLORS.muted, fontSize: 12, lineHeight: 1.7 }}>
         مرّرو الهاتف بالدور. كل واحد كيشوف ملفو الخاص بلا ما يبين للباقي.
         الكل كيخذ نفس الكلمة، غير <span style={{ color: COLORS.redStamp }}>الغريب</span> ما
         كيعرفهاش. من بعد، تناقشو، صوّتو، وشوفو شكون ربح النقط.

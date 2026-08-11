@@ -12,15 +12,28 @@ export default function ImpostorGuessPhase({
   setPhase,
 }) {
   return (
-    <div style={{ background: COLORS.panel, border: `1px solid ${COLORS.hairline}`, borderRadius: 14, padding: 22, textAlign: "center" }}>
-      <div style={{ color: COLORS.redStamp, fontFamily: DISPLAY_FONT, fontSize: 20, fontWeight: 700, marginBottom: 4 }}>
-        دور الغريب: {playerLabel(impostorIndex)}
-      </div>
-      <div style={{ color: COLORS.muted, fontSize: 13, marginBottom: 18 }}>
-        إلا خمّن الكلمة الصحيحة، كيربح نقطة
+    <div style={{
+      background: COLORS.panel,
+      border: `1px solid ${COLORS.hairline}`,
+      borderRadius: 14,
+      padding: "20px",
+      textAlign: "center",
+      display: "flex",
+      flexDirection: "column",
+      gap: "16px",
+      maxHeight: "80vh",
+      overflowY: "auto",
+    }}>
+      <div>
+        <div style={{ color: COLORS.redStamp, fontFamily: DISPLAY_FONT, fontSize: 20, fontWeight: 700 }}>
+          دور الغريب: {playerLabel(impostorIndex)}
+        </div>
+        <div style={{ color: COLORS.muted, fontSize: 13 }}>
+          إلا خمّن الكلمة الصحيحة، كيربح نقطة
+        </div>
       </div>
 
-      <div className="grid grid-cols-2 gap-2 mb-4">
+      <div className="grid grid-cols-2 gap-3">
         {guessOptions.map((w) => {
           const isPicked = guessPicked === w;
           const isCorrect = w === word;
@@ -40,7 +53,7 @@ export default function ImpostorGuessPhase({
                 border: `1px solid ${borderColor}`,
                 color: textColor,
                 borderRadius: 8,
-                padding: "12px 8px",
+                padding: "16px 8px",
                 fontSize: 14,
                 cursor: guessPicked ? "default" : "pointer",
               }}
@@ -53,7 +66,7 @@ export default function ImpostorGuessPhase({
 
       {guessPicked && (
         <>
-          <div style={{ color: guessPicked === word ? COLORS.greenStamp : COLORS.redStamp, fontSize: 14, marginBottom: 16 }}>
+          <div style={{ color: guessPicked === word ? COLORS.greenStamp : COLORS.redStamp, fontSize: 14 }}>
             {guessPicked === word ? "صحيح! ربحتي نقطة" : `غالط، الكلمة كانت: ${word}`}
           </div>
           <GoldButton onClick={() => setPhase("final")}>شوف الترتيب</GoldButton>

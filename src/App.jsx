@@ -198,13 +198,17 @@ export default function App() {
     <div
       dir="rtl"
       style={{
-        minHeight: "100vh",
+        minHeight: "100svh",
         background: `radial-gradient(1200px 600px at 50% -10%, ${COLORS.panel}, ${COLORS.ink})`,
         fontFamily: BODY_FONT,
         color: COLORS.cream,
         position: "relative",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center",
+        padding: "16px",
       }}
-      className="flex items-center justify-center p-4"
     >
       {/* Leaderboard toggle */}
       {showLbButton && (
@@ -238,7 +242,7 @@ export default function App() {
         />
       )}
 
-      <div style={{ width: "95%", maxWidth: "min(440px, 95vw)", margin: "0 auto" }}>
+      <div style={{ width: "100%", maxWidth: "min(440px, 95vw)", margin: "0 auto" }}>
         <div className="text-center mb-6">
           <div
             style={{

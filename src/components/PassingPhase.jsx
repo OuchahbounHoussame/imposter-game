@@ -16,7 +16,7 @@ export default function PassingPhase({
   word,
 }) {
   return (
-    <div className="flex flex-col items-center">
+    <div className="flex flex-col items-center w-full">
       <div style={{ color: COLORS.muted, fontSize: 13, marginBottom: 6 }}>
         {current + 1} / {playerCount}
       </div>
@@ -26,7 +26,7 @@ export default function PassingPhase({
 
       <div
         onClick={() => !flipped && !advancing && handleReveal()}
-        style={{ width: 280, height: 380, position: "relative", cursor: flipped || advancing ? "default" : "pointer", perspective: 1200 }}
+        style={{ width: "100%", maxWidth: 280, aspectRatio: "280/380", position: "relative", cursor: flipped || advancing ? "default" : "pointer", perspective: 1200 }}
       >
         <div
           style={{
@@ -60,8 +60,8 @@ export default function PassingPhase({
               style={{
                 border: `2px solid ${COLORS.gold}`,
                 borderRadius: "50%",
-                width: 92,
-                height: 92,
+                width: "35%",
+                aspectRatio: "1",
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
@@ -74,7 +74,7 @@ export default function PassingPhase({
             >
               سري
             </div>
-            <div style={{ color: COLORS.muted, fontSize: 13, marginTop: 22 }}>اضغط لكشف الملف</div>
+            <div style={{ color: COLORS.muted, fontSize: 13, marginTop: "8%" }}>اضغط لكشف الملف</div>
           </div>
 
           <div
@@ -91,7 +91,7 @@ export default function PassingPhase({
               flexDirection: "column",
               alignItems: "center",
               justifyContent: "center",
-              padding: 20,
+              padding: "5%",
               overflow: "hidden",
             }}
           >
@@ -103,17 +103,18 @@ export default function PassingPhase({
                     color: COLORS.redStamp,
                     border: `3px solid ${COLORS.redStamp}`,
                     borderRadius: 10,
-                    padding: "10px 18px",
+                    padding: "8px 16px",
                     fontFamily: DISPLAY_FONT,
-                    fontSize: 26,
+                    fontSize: "1.5rem",
                     fontWeight: 700,
                     transform: "rotate(-6deg)",
                     letterSpacing: 2,
+                    textAlign: "center"
                   }}
                 >
                   أنت الغريب
                 </div>
-                <div style={{ color: COLORS.muted, fontSize: 13, marginTop: 24, textAlign: "center" }}>
+                <div style={{ color: COLORS.muted, fontSize: 13, marginTop: "10%", textAlign: "center" }}>
                   ما تعرفش الكلمة. حاول تفهم من كلام الآخرين
                   <br />
                   وما تكشفش روحك! إلا طلعو بيك، غادي تقدر تخمن الكلمة وتربح نقطة.
@@ -121,21 +122,21 @@ export default function PassingPhase({
               </>
             ) : (
               <>
-                <div style={{ color: COLORS.muted, fontSize: 12, marginBottom: 6 }}>الفئة: {catUsed}</div>
+                <div style={{ color: COLORS.muted, fontSize: 12, marginBottom: "4%" }}>الفئة: {catUsed}</div>
                 <div
                   style={{
                     color: COLORS.goldSoft,
                     fontFamily: DISPLAY_FONT,
-                    fontSize: 30,
+                    fontSize: "2rem",
                     fontWeight: 700,
                     border: `2px solid ${COLORS.gold}`,
                     borderRadius: 10,
-                    padding: "10px 20px",
+                    padding: "8px 16px",
                   }}
                 >
                   {word}
                 </div>
-                <div style={{ color: COLORS.muted, fontSize: 12, marginTop: 24 }}>
+                <div style={{ color: COLORS.muted, fontSize: 12, marginTop: "10%", textAlign: "center" }}>
                   واحد من المجموعة "الغريب" ولا يعرفهاش
                 </div>
               </>

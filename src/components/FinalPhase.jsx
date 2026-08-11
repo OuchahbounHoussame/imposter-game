@@ -13,11 +13,26 @@ export default function FinalPhase({
   resetRound,
 }) {
   return (
-    <div style={{ background: COLORS.panel, border: `1px solid ${COLORS.hairline}`, borderRadius: 14, padding: 24, textAlign: "center", position: "relative", overflow: "hidden" }}>
+    <div style={{
+      background: COLORS.panel,
+      border: `1px solid ${COLORS.hairline}`,
+      borderRadius: 14,
+      padding: "20px",
+      textAlign: "center",
+      position: "relative",
+      overflow: "hidden",
+      display: "flex",
+      flexDirection: "column",
+      gap: "16px",
+      maxHeight: "80vh",
+      overflowY: "auto",
+    }}>
       <DossierBG />
-      <div style={{ color: COLORS.muted, fontSize: 13, marginBottom: 8 }}>الفئة: {catUsed}</div>
-      <div style={{ fontFamily: DISPLAY_FONT, color: COLORS.goldSoft, fontSize: 24, fontWeight: 700, marginBottom: 18 }}>
-        الكلمة كانت: {word}
+      <div>
+        <div style={{ color: COLORS.muted, fontSize: 13 }}>الفئة: {catUsed}</div>
+        <div style={{ fontFamily: DISPLAY_FONT, color: COLORS.goldSoft, fontSize: 24, fontWeight: 700 }}>
+          الكلمة كانت: {word}
+        </div>
       </div>
 
       <div
@@ -31,16 +46,16 @@ export default function FinalPhase({
           fontSize: 18,
           fontWeight: 700,
           transform: "rotate(-4deg)",
-          marginBottom: 20,
+          alignSelf: "center"
         }}
       >
         الغريب: {playerLabel(impostorIndex)}
       </div>
 
-      <div style={{ color: COLORS.goldSoft, fontSize: 14, fontWeight: 600, marginBottom: 8, textAlign: "right" }}>
+      <div style={{ color: COLORS.goldSoft, fontSize: 14, fontWeight: 600, textAlign: "right" }}>
         الترتيب
       </div>
-      <div className="flex flex-col gap-2 mb-6" style={{ textAlign: "right" }}>
+      <div className="flex flex-col gap-2" style={{ textAlign: "right" }}>
         {sortedIdx().map((i) => (
           <div
             key={i}
@@ -48,7 +63,7 @@ export default function FinalPhase({
             style={{
               background: COLORS.panelSoft,
               borderRadius: 8,
-              padding: "8px 12px",
+              padding: "12px",
               fontSize: 14,
               border: `1px solid ${i === impostorIndex ? COLORS.redStamp : COLORS.hairline}`,
             }}
