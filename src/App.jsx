@@ -238,7 +238,7 @@ export default function App() {
         />
       )}
 
-      <div style={{ width: "100%", maxWidth: 440 }}>
+      <div style={{ width: "95%", maxWidth: "min(440px, 95vw)", margin: "0 auto" }}>
         <div className="text-center mb-6">
           <div
             style={{

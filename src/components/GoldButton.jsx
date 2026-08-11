@@ -13,7 +13,7 @@ export default function GoldButton({ onClick, children, style }) {
         fontSize: 15,
         border: "none",
         borderRadius: 10,
-        padding: "12px 0",
+        padding: "16px 0",
         cursor: "pointer",
         ...style,
       }}

@@ -24,13 +24,13 @@ export default function DiscussPhase({
       <div className="flex justify-center gap-3 mb-6">
         <button
           onClick={() => setRunning((r) => !r)}
-          style={{ background: COLORS.panelSoft, border: `1px solid ${COLORS.gold}`, color: COLORS.goldSoft, borderRadius: 8, padding: "8px 20px", cursor: "pointer", fontSize: 14 }}
+          style={{ background: COLORS.panelSoft, border: `1px solid ${COLORS.gold}`, color: COLORS.goldSoft, borderRadius: 8, padding: "12px 24px", cursor: "pointer", fontSize: 14 }}
         >
           {running ? "وقف" : "شغّل"}
         </button>
         <button
           onClick={() => { setRunning(false); setSeconds(180); }}
-          style={{ background: "transparent", border: `1px solid ${COLORS.hairline}`, color: COLORS.muted, borderRadius: 8, padding: "8px 20px", cursor: "pointer", fontSize: 14 }}
+          style={{ background: "transparent", border: `1px solid ${COLORS.hairline}`, color: COLORS.muted, borderRadius: 8, padding: "12px 24px", cursor: "pointer", fontSize: 14 }}
         >
           إعادة
         </button>
